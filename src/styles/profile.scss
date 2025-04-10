@@ -1,0 +1,225 @@
+// .profile-page-container {
+//     padding: 24px;
+//     max-width: 1200px;
+//     margin: 70px auto auto 240px; // Add top margin and center horizontally
+//     display: flex; // Enable flexbox
+//     flex-direction: column; // Arrange items in a column
+//     // justify-content: center;
+//     align-items: center; // Center horizontally
+// }
+
+// .profile-header-card {
+//     text-align: center;
+//     margin-bottom: 24px;
+//     width: 100%; // Ensure the card takes full available width
+// }
+
+// .avatar {
+//     margin-bottom: 16px;
+// }
+
+// .profile-title {
+//     margin-bottom: 0;
+// }
+
+// .profile-details-row {
+//     margin-bottom: 24px;
+//     width: 100%; // Ensure the row takes full available width
+// }
+
+// // .card-section {
+// //     background-color: "#fa4226";
+// //     margin-bottom: 24px;
+// //     width: 100%; // Ensure the cards take full available width
+// // }
+// .card-section {
+//     margin-bottom: 24px;
+//     width: 100%;
+//     .ant-card-head {
+//         background-color: "#fa4226"; // Apply background only to the header
+//         .ant-card-head-title {
+//           background-color:"#fa4226"; // make the title text white
+//         }
+//     }
+
+// }
+// .action-buttons-row {
+//     margin-top: 24px;
+//     width: 100%; // Ensure the row takes full available width
+//     display: flex;
+//     justify-content: center; // Center horizontally
+// }
+
+// .loading-spinner {
+//     text-align: center;
+//     margin-top: 50px;
+// }
+
+// @media (max-width: 768px) {
+//     .profile-page-container {
+//         padding: 16px;
+//         margin: 20px auto; // Reduce top margin on smaller screens
+//     }
+
+//     .profile-details-row {
+//         gutter: [16, 16];
+//     }
+
+//     .card-section {
+//         margin-bottom: 16px;
+//     }
+// }
+// Profile Page Styles
+.profile-page-container {
+    width: 99vw;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 80px); // Account for navbar height
+  
+    // Header Card
+    .profile-header-card {
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      padding: 2rem;
+      background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fa 100%);
+      
+      .avatar {
+        background-color: #ff4d30;
+        margin-bottom: 1.5rem;
+        border: 3px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .profile-title {
+        color: #333;
+        margin-bottom: 0;
+        font-weight: 600;
+      }
+    }
+  
+    // Details Row
+    .profile-details-row {
+      margin-bottom: 2rem;
+      
+      .card-section {
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .ant-card-head {
+          border-bottom: 1px solid #f0f0f0;
+          font-weight: 600;
+          color: #ff4d30;
+        }
+        
+        .ant-card-body {
+          padding: 1.5rem;
+        }
+        
+        strong {
+          color: #555;
+          margin-right: 8px;
+        }
+        
+        .ant-input {
+          margin-top: 8px;
+          border-radius: 6px;
+        }
+        
+        .ant-divider {
+          margin: 1rem 0;
+        }
+      }
+    }
+  
+    // Action Buttons
+    .action-buttons-row {
+      margin-top: 2rem;
+      
+      .ant-btn {
+        padding: 0 2rem;
+        height: 40px;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        
+        &.ant-btn-primary {
+          background-color: #ff4d30;
+          border-color: #ff4d30;
+          
+          &:hover {
+            background-color: darken(#ff4d30, 10%);
+            transform: translateY(-2px);
+          }
+        }
+        
+        &.ant-btn-default {
+          &:hover {
+            border-color: #ff4d30;
+            color: #ff4d30;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  
+    // Reset Password Button
+    .ant-btn-danger {
+      background-color: #ff4d30;
+      border-color: #ff4d30;
+      
+      &:hover {
+        background-color: darken(#ff4d30, 10%);
+      }
+    }
+  }
+  
+  // Loading Spinner
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  // Responsive Adjustments
+  @media (max-width: 992px) {
+    .profile-page-container {
+      padding: 1.5rem;
+      
+      .profile-header-card {
+        padding: 1.5rem;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .profile-page-container {
+      padding: 1rem;
+      
+      .profile-header-card {
+        padding: 1rem;
+        
+        .avatar {
+          width: 80px;
+          height: 80px;
+          line-height: 80px;
+          font-size: 32px;
+        }
+      }
+      
+      .profile-details-row {
+        .card-section {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
