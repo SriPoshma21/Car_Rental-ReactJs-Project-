@@ -68,7 +68,7 @@
 // }
 
 // export default App;
-import "../src/dist/styles.css";
+// import "../src/dist/styles.css";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
