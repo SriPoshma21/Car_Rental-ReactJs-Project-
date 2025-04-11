@@ -156,7 +156,7 @@
           border-color: #ff4d30;
           
           &:hover {
-            background-color: darken(#ff4d30, 10%);
+            // background-color: darken(#ff4d30, 10%);
             transform: translateY(-2px);
           }
         }
@@ -176,9 +176,9 @@
       background-color: #ff4d30;
       border-color: #ff4d30;
       
-      &:hover {
-        background-color: darken(#ff4d30, 10%);
-      }
+      // &:hover {
+      //   background-color: darken(#ff4d30, 10%);
+      // }
     }
   }
   
