@@ -57,7 +57,7 @@ const PaymentFailure = () => {
         </div>
 
         <Space size="middle" style={{ marginTop: "32px" }}>
-          <Button
+          {/* <Button
             type="primary"
             size="large"
             icon={<CreditCardOutlined />}
@@ -69,7 +69,7 @@ const PaymentFailure = () => {
             }}
           >
             Try Payment Again
-          </Button>
+          </Button> */}
           
           <Button
             size="large"

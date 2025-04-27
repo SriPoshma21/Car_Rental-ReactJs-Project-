@@ -11,24 +11,12 @@ const Login = ({ closeModal }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  // const onFinish = async (values) => {
-  //   setLoading(true);
-  //   try {
-  //     await signInWithEmailAndPassword(auth, values.email, values.password);
-  //     message.success("Login successful!");
-  //     closeModal && closeModal();
-  //     navigate("/Home");
-  //   } catch (error) {
-  //     message.error("Invalid credentials. Please try again.");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
   const onFinish = async (values) => {
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, values.email, values.password);
-      alert("Login successful!"); 
+      localStorage.setItem("user", values.email); // ✅ Save user email
+      alert("Login successful!");
       closeModal && closeModal();
       navigate("/Home");
     } catch (error) {
@@ -37,23 +25,23 @@ const Login = ({ closeModal }) => {
       setLoading(false);
     }
   };
+
   const handleGuestLogin = async () => {
-    // setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, "anonymous@gmail.com", "guest123");
-      alert("Login successful!"); 
+      localStorage.setItem("user", "Guest"); // ✅ Save "Guest"
+      alert("Login successful!");
       closeModal && closeModal();
       navigate("/Home");
     } catch (error) {
       alert("Invalid credentials. Please try again.");
-    } finally {
-      // setLoading(false);
     }
   };
 
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
+      localStorage.setItem("user", result.user.email); // ✅ Save Google email
       message.success(`Welcome ${result.user.displayName}!`);
       closeModal && closeModal();
       navigate("/app-interface");
@@ -85,10 +73,19 @@ const Login = ({ closeModal }) => {
             </Button>
           </Form.Item>
         </Form>
-        <Button block icon={<GoogleOutlined />} onClick={handleGoogleLogin} style={{ backgroundColor: "#D32F2F", borderColor: "#D32F2F", color: "white", marginBottom: 10 }}>
+        <Button
+          block
+          icon={<GoogleOutlined />}
+          onClick={handleGoogleLogin}
+          style={{ backgroundColor: "#D32F2F", borderColor: "#D32F2F", color: "white", marginBottom: 10 }}
+        >
           Continue with Google
         </Button>
-        <Button block onClick={handleGuestLogin} style={{ backgroundColor: "#1565C0", borderColor: "#1565C0", color: "white" }}>
+        <Button
+          block
+          onClick={handleGuestLogin}
+          style={{ backgroundColor: "#1565C0", borderColor: "#1565C0", color: "white" }}
+        >
           Continue as Guest
         </Button>
       </div>
@@ -97,4 +94,3 @@ const Login = ({ closeModal }) => {
 };
 
 export default Login;
-

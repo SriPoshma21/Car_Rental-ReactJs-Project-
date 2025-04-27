@@ -56,10 +56,10 @@ function Navbar() {
       key: 'profile',
       label: <Link to="/profile" onClick={closeMenu}>Profile</Link>,
     },
-    {
-      key: 'bookings',
-      label: <Link to="/bookings" onClick={closeMenu}>Bookings</Link>,
-    },
+    // {
+    //   key: 'bookings',
+    //   label: <Link to="/bookings" onClick={closeMenu}>Bookings</Link>,
+    // },
     {
       key: 'logout',
       label: <span onClick={handleLogout}>Logout</span>,
@@ -145,9 +145,9 @@ function Navbar() {
   <Link to="/profile" onClick={closeMenu} className="mobile-dropdown-item">
     Profile
   </Link>
-  <Link to="/bookings" onClick={closeMenu} className="mobile-dropdown-item">
+  {/* <Link to="/bookings" onClick={closeMenu} className="mobile-dropdown-item">
     Bookings
-  </Link>
+  </Link> */}
   <button onClick={handleLogout} className="mobile-dropdown-item">
     Logout
   </button>
