@@ -20,6 +20,8 @@ import Profile from "./Pages/Profile";
 import PaymentPage from "./Pages/PaymentPage";
 import PaymentSuccess from "./Pages/PaymentSuccess";  // ✅ Import Success Page
 import PaymentFailure from "./Pages/PaymentFailure";  // ✅ Import Failure Page
+import {Toaster} from "react-hot-toast"
+
 
 import { auth } from "./firebase";
 // import Bookings from "./Pages/Bookings";
@@ -38,6 +40,7 @@ function App() {
 
   return (
     <>
+    <Toaster/>
       {/* ✅ Navbar is now always visible */}
       <Navbar user={user} />
 

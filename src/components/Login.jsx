@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, googleProvider } from "../firebase";
 import { Form, Input, Button, Typography, message } from "antd";
 import { GoogleOutlined, UserOutlined, LockOutlined } from "@ant-design/icons";
-
+import toast from "react-hot-toast"
 const { Title } = Typography;
 
 const Login = ({ closeModal }) => {
@@ -16,11 +16,12 @@ const Login = ({ closeModal }) => {
     try {
       await signInWithEmailAndPassword(auth, values.email, values.password);
       localStorage.setItem("user", values.email); // ✅ Save user email
-      alert("Login successful!");
+      // alert("Login successful!");
+      toast.success("Login successful!")
       closeModal && closeModal();
       navigate("/Home");
     } catch (error) {
-      alert("Invalid credentials. Please try again.");
+      toast.error("Invalid credentials. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -30,11 +31,11 @@ const Login = ({ closeModal }) => {
     try {
       await signInWithEmailAndPassword(auth, "anonymous@gmail.com", "guest123");
       localStorage.setItem("user", "Guest"); // ✅ Save "Guest"
-      alert("Login successful!");
+      toast.success("Login successful!");
       closeModal && closeModal();
       navigate("/Home");
     } catch (error) {
-      alert("Invalid credentials. Please try again.");
+      toast.error("Invalid credentials. Please try again.");
     }
   };
 

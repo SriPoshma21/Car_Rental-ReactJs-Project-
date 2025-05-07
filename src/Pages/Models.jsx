@@ -65,7 +65,8 @@ function Models() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh"
+        height: "99vh",
+        width: "99vw"
       }}>
         <Spin size="large" fullscreen />
       </div>
@@ -141,7 +142,7 @@ function Models() {
 
       {/* Authentication Required Modal */}
       <Modal
-        title="Authentication Required"
+        title="Login Required"
         open={authModalVisible}
         onCancel={() => setAuthModalVisible(false)}
         footer={[

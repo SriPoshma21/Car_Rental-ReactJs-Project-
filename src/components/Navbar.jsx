@@ -8,7 +8,7 @@ import Register from "../components/Register";
 import { auth } from "../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import "../styles/NavbarStyles/Navbar.scss"	
-
+import toast from "react-hot-toast"
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -26,6 +26,7 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      toast.success("Logout Successfull!")
       navigate("/");
       setIsMenuOpen(false);
     } catch (error) {
