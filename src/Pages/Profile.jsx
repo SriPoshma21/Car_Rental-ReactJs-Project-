@@ -87,7 +87,7 @@ const Profile = () => {
     }
   };
 
-  if (loading) return <Spin size="large" className="loading-spinner" />;
+  if (loading) return <Spin size="large" className="loading-spinner"/>;
 
   return (
     <div className="profile-page-container">

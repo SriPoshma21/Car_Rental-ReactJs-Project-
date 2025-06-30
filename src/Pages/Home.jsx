@@ -16,34 +16,43 @@ function Home({ user }) {
     <>
       <Hero>
         <div className="hero-content">
-        <Title level={1} className="hero-title" style={{ color: "#fff" }}>
-  {user ? `Welcome back, ${user?.displayName || user?.email?.split("@")[0]}` : "Premium Car Rental Service"}
-</Title>
+          <Title level={1} className="hero-title" style={{ color: "#fff" }}>
+            {user
+              ? `Welcome back, ${
+                  user?.displayName || user?.email?.split("@")[0]
+                }`
+              : "Premium Car Rental Service"}
+          </Title>
 
-          <p className="hero-subtitle" style={{ color: '#fff', fontSize: '18px' }}>
-            {user ? "Ready for your next adventure?" : "Find the perfect vehicle for your journey"}
+          <p
+            className="hero-subtitle"
+            style={{ color: "#fff", fontSize: "18px" }}
+          >
+            {user
+              ? "Ready for your next adventure?"
+              : "Find the perfect vehicle for your journey"}
           </p>
           <div className="hero-buttons">
-            <Button 
-              type="primary" 
-              size="large" 
-              style={{ 
-                backgroundColor: '#fa4226', 
-                borderColor: '#fa4226',
-                marginRight: user ? 0 : '16px'
+            <Button
+              type="primary"
+              size="large"
+              style={{
+                backgroundColor: "#fa4226",
+                borderColor: "#fa4226",
+                marginRight: user ? 0 : "16px",
               }}
             >
-              <Link to="/models" style={{ color: 'white' }}>
+              <Link to="/models" style={{ color: "white" }}>
                 {user ? "Book Your Next Ride" : "Browse Vehicles"}
               </Link>
             </Button>
             {!user && (
-              <Button 
-                size="large" 
-                style={{ 
-                  borderColor: '#fa4226', 
-                  color: '#fa4226',
-                  backgroundColor: 'transparent'
+              <Button
+                size="large"
+                style={{
+                  borderColor: "#fa4226",
+                  color: "#fa4226",
+                  backgroundColor: "transparent",
                 }}
               >
                 <Link to="/login">Sign In</Link>
