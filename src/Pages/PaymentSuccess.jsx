@@ -37,7 +37,7 @@ const PaymentSuccess = () => {
           Payment Successful!
         </Title>
         
-        <Text style={{ fontSize: "16px", marginBottom: "24px" }}>
+        <Text style={{ fontSize: "23px", marginBottom: "24px" }}>
           Your ride has been booked successfully. A confirmation has been sent to your email.
         </Text>
 
@@ -115,7 +115,7 @@ const PaymentSuccess = () => {
           marginTop: "24px",
           fontSize: "14px"
         }}>
-          Need help? Contact our support team at support@nookride.com
+          Need help? Contact our support team at support@bookride.com
         </Text>
       </Card>
     </div>
